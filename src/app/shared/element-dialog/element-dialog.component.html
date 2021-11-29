@@ -1,0 +1,41 @@
+<h1 *ngIf="!isChange" mat-dialog-title>Create Register</h1>
+<h1 *ngIf="isChange" mat-dialog-title>Edit Register</h1>
+<div mat-dialog-content>
+  <mat-form-field>
+    <mat-label>Position</mat-label>
+    <input matInput [(ngModel)]="data.position">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Name</mat-label>
+    <input matInput [(ngModel)]="data.name">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Weight</mat-label>
+    <input matInput [(ngModel)]="data.weight">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Symbol</mat-label>
+    <input matInput [(ngModel)]="data.symbol">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Modelo</mat-label>
+    <input matInput [(ngModel)]="data.modelo">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Marca</mat-label>
+    <input matInput [(ngModel)]="data.marca">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Ano</mat-label>
+    <input matInput [(ngModel)]="data.ano">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Cor</mat-label>
+    <input matInput [(ngModel)]="data.cor">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onCancel()">Cancel</button>
+  <button mat-button *ngIf="!isChange" [mat-dialog-close]="data" cdkFocusInitial>Save</button>
+  <button mat-button *ngIf="isChange" [mat-dialog-close]="data" cdkFocusInitial>Save Edit</button>
+</div>
